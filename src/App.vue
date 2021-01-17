@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app :style="{background: $vuetify.theme.themes.light.background}">
     <v-row class="mt-10">
       <v-col cols="12" md="4"></v-col>
       <v-col cols="12" md="4">
@@ -234,3 +234,9 @@ export default {
   })
 }
 </script>
+
+<style>
+html, body {
+  background-color: gray;
+}
+</style>
