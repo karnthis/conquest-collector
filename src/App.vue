@@ -34,6 +34,30 @@
                 </v-col>
               </v-row>
 
+              <v-row class="mb-2"><h2>Player Factions</h2></v-row>
+              <v-row>
+                <v-col>
+                  <v-select
+                    v-model="p1.faction"
+                    :items="fationItems"
+                    :rules="isRequired"
+                    label="Player One"
+                    required
+                    outlined
+                  ></v-select>
+                </v-col>
+                <v-col>
+                  <v-select
+                    v-model="p2.faction"
+                    :items="fationItems"
+                    :rules="isRequired"
+                    label="Player Two"
+                    required
+                    outlined
+                  ></v-select>
+                </v-col>
+              </v-row>
+
               <v-row class="mb-2"><h2>Scenario Played</h2></v-row>
               <v-row>
                 <v-col cols="4">
@@ -219,6 +243,13 @@ export default {
     game: {},
     isRequired: [
       v => !!v || 'Field is Required'
+    ],
+    fationItems: [
+      '100K',
+      'Spires',
+      'Dweghom',
+      'Nords',
+      'W\'Hadrun'
     ],
     wldyItems: [
       'Win',
