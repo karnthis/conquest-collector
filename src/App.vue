@@ -39,7 +39,7 @@
                 <v-col>
                   <v-select
                     v-model="p1.faction"
-                    :items="fationItems"
+                    :items="factionItems"
                     :rules="isRequired"
                     label="Player One"
                     required
@@ -49,7 +49,7 @@
                 <v-col>
                   <v-select
                     v-model="p2.faction"
-                    :items="fationItems"
+                    :items="factionItems"
                     :rules="isRequired"
                     label="Player Two"
                     required
@@ -79,7 +79,6 @@
                     outlined
                   ></v-text-field>
                 </v-col>
-                <v-col></v-col>
               </v-row>
 
               <v-row class="mb-2"><h2>Win / Loss / Draw / Yield</h2></v-row>
@@ -188,6 +187,17 @@
                 <v-col></v-col>
               </v-row>
 
+              <v-row class="mb-2"><h2>Event ID (If Applicable)</h2></v-row>
+              <v-row>
+                <v-col>
+                  <v-text-field
+                    v-model="game.event"
+                    label="Example: AA123"
+                    outlined
+                  ></v-text-field>
+                </v-col>
+              </v-row>
+
             </v-form>
           </v-card-text>
 
@@ -244,7 +254,7 @@ export default {
     isRequired: [
       v => !!v || 'Field is Required'
     ],
-    fationItems: [
+    factionItems: [
       '100K',
       'Spires',
       'Dweghom',
@@ -269,5 +279,8 @@ export default {
 <style>
 html, body {
   background-color: gray;
+}
+h1, h2 {
+  word-break: break-word
 }
 </style>
